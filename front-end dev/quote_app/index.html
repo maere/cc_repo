@@ -1,0 +1,51 @@
+<html>
+  <head>
+   <title>Random Quote Generator</title>
+   <!--bootstrap-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+   integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+   crossorigin="anonymous">
+    <link rel="stylesheet" href="custom_style.css">
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="quoter.js"></script>
+  </head>
+  <body>
+    <header>
+      <!--<img id="logo" src='https://url.png' width='200' />-->
+    </header>
+    <div class="container-fluid">
+     <h1>Random Quote Generator</h1>
+     <hr>
+     <h4><em>Sometimes you just want to think deep thoughts. Or have someone else think deep thoughts for you.</em></h4>
+
+
+     <div class="row">
+       <div class="col-md-1">
+         <div class="left-side">
+            <button id="get-quote" class="btn btn-success">Get Quote</button>
+         </div>
+       </div>
+       <div class="col-md-1"></div>
+
+       <div class="col-md-10">
+         <div class="well">
+         <blockquote class="blockquote-reverse"><!-- right side-->
+          <!-- quotes get inserted/appended here-->
+          <p id="quote-text">Click the button on the left to ponder or get inspired.</p>
+        </blockquote>
+
+         </div>
+       </div>
+
+       <br/>
+      <!--<hr>
+      //later could add ability for people to add their own quotes dynamically, it would store to a text file on github or in some db on a cloud server somewhere...
+            <input id="user-quote" type="text"> </input>
+            <button id="add-quote">Add My Quote</button> -->
+   </div>
+   <footer>
+   <div id="content"> by <a href="http://github.com/maere">Mare</a> </div>
+   </footer>
+ </body>
+</html>
