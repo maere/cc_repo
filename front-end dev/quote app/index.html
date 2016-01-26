@@ -1,0 +1,85 @@
+<html>
+  <head>
+   <title>Random Quote Generator</title>
+   <!--bootstrap-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+   integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+   crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css">
+    <!--<script>
+    !function(d,s,id){
+      var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+      if(!d.getElementById(id)){js=d.createElement(s);
+        js.id=id;
+        js.src=p+'://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js,fjs);
+      }
+    }(document, 'script', 'twitter-wjs');
+    </script>-->
+    <!--<script type="text/javascript" src="twitter_widget.js"></script>-->
+    <!--<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  LOAD twitter widge js-->
+  <script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+
+</script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="quoter.js"></script>
+  </head>
+  <body>
+    <header>
+      <!--<img id="logo" src='https://url.png' width='200' />-->
+    </header>
+    <div class="container">
+     <h1>Random Quote Generator</h1>
+     <hr>
+     <h4><em>Sometimes you just want to think deep thoughts. Or have someone else think deep thoughts for you.</em></h4>
+      <div class="row"></div>
+
+     <div class="row">
+       <div class="col-md-1">
+         <div class="left-side">
+            <button id="get-quote" class="btn btn-success">Get Quote</button>
+         </div>
+       </div>
+       <div class="col-md-1">&nbsp;&nbsp;&nbsp;</div>
+
+       <div class="col-md-10">
+         <div class="well">
+         <blockquote class="blockquote-reverse"><!-- right side-->
+          <!-- quotes get inserted/appended here-->
+          <p id="quote-text">Click the button on the left to ponder or get inspired.</p><p id="author"></p>
+        </blockquote>
+        <span id="twitter-generator"></span>
+        <!--
+      <a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="WANT to USE dynamically loaded text here!! Need to include author too...">Tweet</a>
+        -->
+         </div>
+       </div>
+
+       <br/>
+      <!--<hr>
+      //later could add ability for people to add their own quotes dynamically, it would store to a text file on github or in some db on a cloud server somewhere...
+            <input id="user-quote" type="text"> </input>
+            <button id="add-quote">Add My Quote</button> -->
+   </div>
+   <footer>
+   <div class="row" id="content"> by <a href="http://github.com/maere">Mare</a> </div>
+   </footer>
+ </body>
+</html>
