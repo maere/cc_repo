@@ -12,6 +12,7 @@
 
 <body>
   <!--<script src="js/scripts.js"></script>-->
+  <link rel="stylesheet" href="custom_css.css">
   <div id="container">
     <h1>Calculator</h1>
 
@@ -23,35 +24,35 @@
 
       <div id="keys">
         <div class="row" id="r2">
-          <div class="key start"><span class="entry-label">AC</span></div>
-          <div class="key"><span class="entry-label">CE</span></div>
-          <div class="key"><span class="entry-label">%</span></div>
-          <div class="key"><span class="entry-label">/</span></div>
+          <div class="key start"><span class="entry-label" id="clear">AC</span></div>
+          <div class="key"><span class="entry-label" id="ce">CE</span></div>
+          <div class="key"><span class="entry-label" id="percent">%</span></div>
+          <div class="key"><span class="entry-label" id="divide">/</span></div>
         </div>
         <div class="row" id="r3">
-           <div class="key start"><span class="entry-label">7</span></div>
-          <div class="key"><span class="entry-label">8</span></div>
-          <div class="key"><span class="entry-label">9</span></div>
-          <div class="key"><span class="entry-label">X</span></div>
+           <div class="key start"><span class="entry-label" id="seven">7</span></div>
+          <div class="key"><span class="entry-label" id="eight">8</span></div>
+          <div class="key"><span class="entry-label" id="nine">9</span></div>
+          <div class="key"><span class="entry-label" id="multiply">X</span></div>
 
         </div>
         <div class="row" id="r4">
-          <div class="key start"><span class="entry-label">4</span></div>
-          <div class="key"><span class="entry-label">5</span></div>
-          <div class="key"><span class="entry-label">6</span></div>
-          <div class="key"><span class="entry-label">–</span></div>
+          <div class="key start"><span class="entry-label" id="four">4</span></div>
+          <div class="key"><span class="entry-label" id="five">5</span></div>
+          <div class="key"><span class="entry-label" id="six">6</span></div>
+          <div class="key"><span class="entry-label" id="subtract">–</span></div>
         </div>
         <div class="row" id="r5">
-          <div class="key start"><span class="entry-label">1</span></div>
-          <div class="key"><span class="entry-label">2</span></div>
-          <div class="key"><span class="entry-label">3</span></div>
-          <div class="key"><span class="entry-label">+</span></div>
+          <div class="key start"><span class="entry-label" id="one">1</span></div>
+          <div class="key"><span class="entry-label" id="two">2</span></div>
+          <div class="key"><span class="entry-label" id="three">3</span></div>
+          <div class="key"><span class="entry-label" id="add">+</span></div>
 
         </div>
         <div class="row" id="r6">
-          <div class="key start"><span class="entry-label">0</span></div>
-          <div class="key"><span class="entry-label">.</span></div>
-          <div class="key equals"><span class="entry-label">=</span></div>
+          <div class="key start"><span class="entry-label" id="zero">0</span></div>
+          <div class="key"><span class="entry-label" id="period">.</span></div>
+          <div class="key equals"><span class="entry-label" id="equals">=</span></div>
 
 
         </div>
@@ -62,6 +63,9 @@
     <!-- end calc body-->
   </div>
   <!-- end container-->
+    <!--<script src="js/scripts.js"></script>-->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>
 
 </html>
