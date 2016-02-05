@@ -1,80 +1,99 @@
-//global variables
-var entry;
+var accumulator =0;
+var numInMem = 0;
+//var operator - can't pass an operator as argument, but can use as a key,
+//and use function as the corresponding value
 
-//19 on click events, one for each button :/
-//alt option is to iterate through class array each time and check
-$('#clear').click(function(){
-   entry = $(this).text();
-});
 
-$('#ce').click(function(){
-   entry = $(this).text();
-});
+//numbers
 
-$('#percent').click(function(){
-   entry = $(this).text();
-});
-
-$('#divide').click(function(){
-   entry = $(this).text();
-});
-
-$('#seven').click(function(){
-   entry = $(this).text();
-});
-
-$('#eight').click(function(){
-   entry = $(this).text();
-});
-
-$('#nine').click(function(){
-   entry = $(this).text();
-});
-
-$('#multiply').click(function(){
-   entry = $(this).text();
-});
-
-$('#four').click(function(){
-   entry = $(this).text();
-});
-
-$('#five').click(function(){
-   entry = $(this).text();
-});
-
-$('#six').click(function(){
-   entry = $(this).text();
-});
-
-$('#subtract').click(function(){
-   entry = $(this).text();
+$('#zero').click(function(){
+  accumulator = accumulator*10+0;
+  $('#nums-display').val(accumulator);
 });
 
 $('#one').click(function(){
-   entry = $(this).text();
+   //entry = $(this).text();
+     accumulator = accumulator*10+1;
+   $('#nums-display').val(accumulator);
 });
 
 $('#two').click(function(){
-   entry = $(this).text();
+     accumulator = accumulator*10+2;
+      $('#nums-display').val(accumulator);
 });
 
 $('#three').click(function(){
-   entry = $(this).text();
+     accumulator = accumulator*10+3;
+      $('#nums-display').val(accumulator);
 });
+
+$('#four').click(function(){
+   accumulator = accumulator*10+4;
+   $('#nums-display').val(accumulator);
+});
+
+$('#five').click(function(){
+   accumulator = accumulator*10+5;
+   $('#nums-display').val(accumulator);
+});
+
+$('#six').click(function(){
+   accumulator = accumulator*10+6;
+   $('#nums-display').val(accumulator);
+});
+
+$('#seven').click(function(){
+   accumulator = accumulator*10+7;
+   $('#nums-display').val(accumulator);
+});
+
+$('#eight').click(function(){
+   accumulator = accumulator*10+8;
+   $('#nums-display').val(accumulator);
+});
+
+$('#nine').click(function(){
+   accumulator = accumulator*10+9;
+   $('#nums-display').val(accumulator);
+});
+
+//operations
 
 $('#add').click(function(){
-   entry = $(this).text();
+  numInMem = accumulator;
+  accumulator = 0;
+    //internal callback waiting for the equals sign to execute the addition operation
 });
 
-$('#zero').click(function(){
-   entry = $(this).text();
+$('#multiply').click(function(){
+});
+
+$('#subtract').click(function(){
+});
+
+$('#divide').click(function(){
+});
+
+
+//other
+$('#clear').click(function(){
+   accumulator = 0;
+   $('#nums-display').val(accumulator);
+});
+
+$('#percent').click(function(){
+   accumulator = accumulator/100;
+   $('#nums-display').val(accumulator);
+});
+
+$('#ce').click(function(){
+
 });
 
 $('#period').click(function(){
-   entry = $(this).text();
+
 });
 
-$('#equals').click(function(){
-   entry = $(this).text();
-});
+// $('#equals').click(function(){
+//
+// });
