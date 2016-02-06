@@ -19,8 +19,22 @@
     <div id="calc-body">
 
       <div class="row" id="r1">
-        <!--<div class="display-box"><span id="nums-display"></span></div>-->
-        <div class="display-box"><input type="number" id="nums-display">0</input></div>
+
+        <div class="input-display">
+          <input type="text" pattern="[0-9]*" id="acc-display"></input>
+            <style>
+            input {
+                resize: horizontal;
+                width: 325px;
+                margin: 25px auto;
+                border-radius: 5px;
+                text-align: right;
+                font-size: 40px;
+                box-shadow: inset 1px -1px 1px 3px #CCC,
+                          inset 1px -1px 1px 3px #CCC;
+            }
+            </style>
+        </div>
       </div>
 
       <div id="keys">
