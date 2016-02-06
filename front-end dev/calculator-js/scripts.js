@@ -1,6 +1,3 @@
-
-
-
 //global variables
 var accumulator = 0;
 var numInMem = 0;
@@ -9,7 +6,6 @@ var result;
 var operator;
 
 //numbers
-
 $('#zero').click(function(){
   accumulator = accumulator*10+0;
   $('#acc-display').val(accumulator);
@@ -85,13 +81,11 @@ $('#add').click(function(){
   //assign operator to key that will call approriate function
   operator = myCalculator.add;
   //store current value of number in display
-  numInMem = accumulator; //should have some kind of sign - aflash on the display screen?
+  numInMem = accumulator;
   //clear out accumulator
   accumulator = 0;
-  //now need to fetch another number, the accumulator begins anew
-
-    //internal callback waiting for the equals sign in order to execute the addition operation
-    //
+  //should have some kind of sign that a + key has been pressed - aflash on the display screen?
+  operatorHighlight();
 
 });
 
@@ -107,18 +101,21 @@ $('#multiply').click(function(){
   operator = myCalculator.multiply;
   numInMem = accumulator;
   accumulator = 0;
+  operatorHighlight();
 });
 
 $('#subtract').click(function(){
   operator = myCalculator.subtract;
   numInMem = accumulator;
   accumulator = 0;
+  operatorHighlight();
 });
 
 $('#divide').click(function(){
   operator = myCalculator.divide;
   numInMem = accumulator;
   accumulator = 0;
+  operatorHighlight();
 });
 
 
@@ -141,22 +138,14 @@ $('#period').click(function(){
 
 });
 
+//jquery color animation
 
+function operatorHighlight(){
+  $( "#acc-display" ).animate({
+    backgroundColor: "#F5F549",
+  }, 100 );
 
-
-
-
-//----
-//myCalculator object with member variables and methods
-//var myCalc = {var memory: 0, var accumulator, var addFunction, etc.}
-
-//numbe click handler will  myCal.accumulate(num);
-//add click handler will myCalc.add(num);
-//and end of each gen handler type will need to call "installCallbackHandler"
-  //function to update display- takes a single argument(numToDisplay)
-
-
-
-  //while(typeof entry === 'number'){
-  //strRep += entry.toString();
-  //num1 = parseFloat(strRep);
+  $( "#acc-display" ).animate({
+    backgroundColor: "#fff",
+  }, 100 );
+}
