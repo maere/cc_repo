@@ -6,38 +6,38 @@ var result;
 var operator;
 
 //numbers
-$('#zero').click(function(){
+$('#zero').parent().click(function(){
   accumulator = accumulator*10+0;
   $('#acc-display').val(accumulator);
 });
 
-$('#one').click(function(){
+$('#one').parent().click(function(){
    //entry = $(this).text();
      accumulator = accumulator*10+1;
    $('#acc-display').val(accumulator);
 });
 
-$('#two').click(function(){
+$('#two').parent().click(function(){
      accumulator = accumulator*10+2;
       $('#acc-display').val(accumulator);
 });
 
-$('#three').click(function(){
+$('#three').parent().click(function(){
      accumulator = accumulator*10+3;
       $('#acc-display').val(accumulator);
 });
 
-$('#four').click(function(){
+$('#four').parent().click(function(){
    accumulator = accumulator*10+4;
    $('#acc-display').val(accumulator);
 });
 
-$('#five').click(function(){
+$('#five').parent().click(function(){
    accumulator = accumulator*10+5;
    $('#acc-display').val(accumulator);
 });
 
-$('#six').click(function(){
+$('#six').parent().click(function(){
    accumulator = accumulator*10+6;
    $('#acc-display').val(accumulator);
 });
@@ -47,12 +47,12 @@ $('#seven').click(function(){
    $('#acc-display').val(accumulator);
 });
 
-$('#eight').click(function(){
+$('#eight').parent().click(function(){
    accumulator = accumulator*10+8;
    $('#acc-display').val(accumulator);
 });
 
-$('#nine').click(function(){
+$('#nine').parent().click(function(){
    accumulator = accumulator*10+9;
    $('#acc-display').val(accumulator);
 });
@@ -77,7 +77,7 @@ var myCalculator = {
 
 //operations
 
-$('#add').click(function(){
+$('#add').parent().click(function(){
   //assign operator to key that will call approriate function
   operator = myCalculator.add;
   //store current value of number in display
@@ -90,28 +90,28 @@ $('#add').click(function(){
 });
 
 
-$('#equals').click(function(){
+$('#equals').parent().click(function(){
   result = operator(numInMem, accumulator);
   accumulator = 0;
   $('#acc-display').val(result);
 });
 
 
-$('#multiply').click(function(){
+$('#multiply').parent().click(function(){
   operator = myCalculator.multiply;
   numInMem = accumulator;
   accumulator = 0;
   operatorHighlight();
 });
 
-$('#subtract').click(function(){
+$('#subtract').parent().click(function(){
   operator = myCalculator.subtract;
   numInMem = accumulator;
   accumulator = 0;
   operatorHighlight();
 });
 
-$('#divide').click(function(){
+$('#divide').parent().click(function(){
   operator = myCalculator.divide;
   numInMem = accumulator;
   accumulator = 0;
@@ -120,21 +120,21 @@ $('#divide').click(function(){
 
 
 //other
-$('#clear').click(function(){
+$('#clear').parent().click(function(){
    accumulator = 0;
    $('#acc-display').val(accumulator);
 });
 
-$('#percent').click(function(){
+$('#percent').parent().click(function(){
    accumulator = accumulator/100;
    $('#acc-display').val(accumulator);
 });
 
-$('#ce').click(function(){
+$('#ce').parent().click(function(){
 
 });
 
-$('#period').click(function(){
+$('#period').parent().click(function(){
 
 });
 
