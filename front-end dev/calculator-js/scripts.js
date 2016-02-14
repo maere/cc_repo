@@ -69,36 +69,78 @@ $(".key").click(function(){
       break;
 
     case "+":
-      operator = myCalculator.add;
-      recordNumToMem();
+        //if operator undefined, numDisplay = 0
+      if(operator==undefined){
+        numDisplay = 0;
+      }
+      //else push numDislay to numberHolder
+      else{
+          recordNumToMem();
+      }
+      //do 2 item check, if so, do calculation with old operator, push to [0], and pop 2nd (clear displayNum)
       if(numberHolder.length===2){
         calculate();
-        }
-        break;
+      }
+      //do 1 item check, if one item change the operator to this case.
+      if(numberHolder.length===1){
+        operator = myCalculator.add;
+      }
+          break;
     case "–":
-      operator = myCalculator.subtract;
-          recordNumToMem();
-          if(numberHolder.length===2){
-            calculate();
-            }
+          //if operator undefined, numDisplay = 0
+        if(operator==undefined){
+          numDisplay = 0;
+        }
+        //else push numDislay to numberHolder
+        else{
+            recordNumToMem();
+        }
+        //do 2 item check, if so, do calculation with old operator, push to [0], and pop 2nd (clear displayNum)
+        if(numberHolder.length===2){
+          calculate();
+        }
+        //do 1 item check, if one item change the operator to this case.
+        if(numberHolder.length===1){
+          operator = myCalculator.subtract;
+        }
             break;
-
     case "/":
-      operator = myCalculator.divide;
+        //if operator undefined, numDisplay = 0
+      if(operator==undefined){
+        numDisplay = 0;
+      }
+      //else push numDislay to numberHolder
+      else{
           recordNumToMem();
-          if(numberHolder.length===2){
-            calculate();
-            }
-            break;
+      }
+      //do 2 item check, if so, do calculation with old operator, push to [0], and pop 2nd (clear displayNum)
+      if(numberHolder.length===2){
+        calculate();
+      }
+      //do 1 item check, if one item change the operator to this case.
+      if(numberHolder.length===1){
+        operator = myCalculator.divide;
+      }
+          break;
 
     case "X":
-      operator = myCalculator.multiply;
+        //if operator undefined, numDisplay = 0
+      if(operator==undefined){
+        numDisplay = 0;
+      }
+      //else push numDislay to numberHolder
+      else{
           recordNumToMem();
-          if(numberHolder.length===2){
-            calculate();
-            }
-            break;
-
+      }
+      //do 2 item check, if so, do calculation with old operator, push to [0], and pop 2nd (clear displayNum)
+      if(numberHolder.length===2){
+        calculate();
+      }
+      //do 1 item check, if one item change the operator to this case.
+      if(numberHolder.length===1){
+        operator = myCalculator.multiply;
+      }
+          break;
 
     case "AC":
       displayNum = 0;
@@ -109,23 +151,27 @@ $(".key").click(function(){
       break;
 
     case "=":
+        numberHolder.push(displayNum);
+        displayNum = 0;
 
-      numInMem = displayNum;
-      numberHolder.push(displayNum);
-
-      if(numberHolder.length<2){
+        if(numberHolder.length===2){
+          //do calculation & push result to  numberHolder[0] - this is basically equals function
+          numberHolder[0] = operator(numberHolder[0], numberHolder[1]);
+          //operator should get replaced on the fly with the next calcuation
+          numberHolder.pop();
           $('#acc-display').val(numberHolder[0]);
           operator = function(){};
-      }
-      else if(numberHolder.length===2){
-        //do calculation & push result to  numberHolder[0] - this is basically equals function
-        numberHolder[0] = operator(numberHolder[0], numberHolder[1]);
-        //operator should get replaced on the fly with the next calcuation
-        numberHolder.pop();
-        $('#acc-display').val(numberHolder[0]);
-      }
-      break;
+        }
 
+        if(numberHolder.length<2){
+          $('#acc-display').val(numberHolder[0]);
+          operator = function(){};
+        }
+
+
+
+
+        break;
     default:
       console.log('This is not valid.');
     }
