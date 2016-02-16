@@ -11,8 +11,8 @@ After 18 months of scripting across a few languages I guess I have gotten a lot 
 #Basic Front End Development Projects#
 
 - Personal Web Page
-- Random Quote Machine
-- JavaScript Calculator
+- [Random Quote Machine] (http://codepen.io/maere/pen/dGKOEM)
+- [JavaScript Calculator] (http://codepen.io/maere/pen/vLbqzb)
 - Pomodoro Clock
 
 
