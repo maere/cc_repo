@@ -1,0 +1,34 @@
+body {
+  margin-top: 30px;
+}
+
+header {
+  background-color: black;
+}
+.layer {
+  height: 500px;
+  width: 100%;
+}
+
+#block-1 {
+  background-color: gold;
+}
+#block-2 {
+  background-color: green;
+}
+#block-3 {
+  background-color: grey;
+}
+
+footer {
+  height: 100px;
+  background-color: black;
+}
+
+.col-center{
+  margin:0 auto;
+}
+
+a:hover {
+  color: blue;
+}
