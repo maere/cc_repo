@@ -1,10 +1,10 @@
-This repo is for storage of any problems I solve related to the Free Code Camp curriculum. I'm only storing my solutions to the challenges presented (and not the actual lessons FCC presents). Here is the Table of Contents for the Front-End portion:
+This repo is for storage of any problems I solve related to the Free Code Camp curriculum. I'm only storing my solutions to the challenges presented (and not the actual lessons you work through on FCC). Here is the Table of Contents for the Front-End portion:
 
 #Basic Algorithm Scripting#
 
 This [first set of problems] (https://github.com/maere/cc_repo/tree/master/basic%20algorithms) covers basic algorithms and they estimate it takes students 50 hours to complete. 
 
-But after 18 months of scripting across a few languages I guess I have gotten a lot faster because I was able to knock out the first 10 of these basic problems in the 3-5 hours between when I finished my dinner and when I went to bed. The remainder took a little more time, but I was still happy to know that I am getting much faster.
+But after 18 months of scripting across a few languages I guess I have gotten a lot faster because I was able to knock out the first 10 of these basic problems in one night in the 3-5 hours between when I finished my dinner and when I went to bed. The remainder took a little more time, but I was still happy to know that I am getting much faster.
  
 #Basic Front End Development Projects#
 - Personal Web Page
