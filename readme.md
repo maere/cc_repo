@@ -14,7 +14,7 @@ But after 18 months of scripting across a few languages I guess I have gotten a 
 - TBD
 
 #Intermediate Front End Development Projects#
-- [Random Quote Machine User Stories](http://www.freecodecamp.com/challenges/build-a-random-quote-machine) - [My Random Quote Machine Solution](http://codepen.io/maere/pen/dGKOEM)
+- [My Random Quote Machine Solution](http://codepen.io/maere/pen/dGKOEM) to [User Stories](http://www.freecodecamp.com/challenges/build-a-random-quote-machine) -
 - Show the Local Weather
 - Build a Wikipedia Viewer
 - Use the Twitch.tv JSON API
@@ -23,7 +23,7 @@ But after 18 months of scripting across a few languages I guess I have gotten a 
 - TBD
 
 #Advanced Front End Development Projects#
-- [JavaScript Calculator User Stories] (http://www.freecodecamp.com/challenges/build-a-javascript-calculator) - [My JavaScript Calculator Solution](http://codepen.io/maere/pen/vLbqzb)
+- [My JavaScript Calculator Solution](http://codepen.io/maere/pen/vLbqzb) to [User Stories] (http://www.freecodecamp.com/challenges/build-a-javascript-calculator) - 
 - Build a Pomodoro Clock
 - Build a Tic Tac Toe Game
 - Build a Simon Game
