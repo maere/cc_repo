@@ -1,12 +1,16 @@
 
-h1,h2{
+h1{
   margin-bottom: 50px;
   color: white;
   text-shadow: 3px 3px 5px black;
 }
 
-h2{
-  font-family:fantasy;
+.location{
+  font-family: fantasy;
+  font-style: italic;
+  font-size: 42;
+  color: white;
+  text-shadow: 3px 3px 5px black;
 }
 
 h3{
@@ -20,12 +24,15 @@ h3{
 }
 
 .display{
-  background-color: white;
-  opacity: 0.5;
+  background-color: rgba(255,255,255,0.5);
   height: 75px;
   width: auto;
   border-radius: 5px;
-  box-shadow: 10px 5px 5px black;
+  box-shadow: 10px 5px 5px rgb(50,50,50);
+  padding: 10px;
+  text-align: left;
+  font-size: 24px;
+  color: rgb(70,70,140);
 }
 
 .layer{
