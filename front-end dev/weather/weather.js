@@ -1,36 +1,14 @@
  $(document).ready(function(){
    getLocation();
+
+    $("button").click(function () {
+      pressed = $(this).attr("id");
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+      determineFC(pressed); //refactored into function
+   });
+
  });
-
- $(document).on('click', 'fahrenheit', function(e){
-     $('button').removeClass('active');
-     $(this).addClass('active');
-     //call function;
-     $('#temp').text(toFahrenheit(currTemp));
- });
-
- $(document).on('click', 'celsius', function(e){
-     $('button').removeClass('active');
-     $(this).addClass('active');
-     //call function;
-     $('#temp').text(toCelsius(currTemp));
- });
-
-
-//  $("button").click(function () {
-//     $(this).toggleClass("active");
-//     //get id att value so you know which function to call
-//     convertTo = $(this).attr('id');
-//     //call temp function
-//     if(convertTo==="celsius"){
-//       calculatedTemp = toCelsius(currTemp);
-//     }else{
-//       calculatedTemp = toFahrenheit(currTemp);
-//     }
-//     //get selector and change data in box
-//     $('#temp').text(calculatedTemp);
-//
-// });
 
 //get user's location
 var currLatitude;
@@ -43,6 +21,7 @@ var calculatedTemp;
 var currConditions;
 var currWind;
 var convertTo = "fahrenheit"
+var pressed;
 
 function getLocation(){
   if(navigator.geolocation){
@@ -75,9 +54,9 @@ function getWeatherData(currLatitude, currLongitude){
 
       $('.location').text(currLocation);
       //bg gets loaded depending on keyword in weather[0].main, will pull URL value from obj
-      $('#temp').text(Math.floor(calculatedTemp)); //can also use Math.round() for integer
-      $('#conditions').text(currConditions + ", " + currDescription);
-      $('#wind').text(currWindDirection + " degrees at " + currWind + " mph");
+      $('#temp').text(Math.floor(calculatedTemp) + "°"); //can also use Math.round() for integer
+      $('#conditions').text(currDescription);
+      $('#wind').text(currWind + " mph from " + Math.floor(currWindDirection) + "'");
 
     });
   }
@@ -86,12 +65,27 @@ function getWeatherData(currLatitude, currLongitude){
   //depending on conditions loads background (stored in an object {})
       // and/or icon for general conditions (sunny, cloudy, partly cloudy, rain, drizzle, snow, sleet, etc.)
 
-      var bgPix = {"clouds": "http://imagepathplaceholder",
+      var bgPix = { "clouds": "http://imagepathplaceholder",
+                    "partly cloudy": "http://imagepathplaceholder",
                     "clear": "http://imagepathplaceholder",
-                    "rain": "http://imagepathplaceholder",
+                    "sunny": "http://imagepathplaceholder",
+                    "rainy": "http://imagepathplaceholder",
+                    "drizzle": "http://imagepathplaceholder",
                     "snow": "http://imagepathplaceholder",
                     "sleet": "http://imagepathplaceholder",
-                    "tbd": "http://imagepathplaceholder"};
+                    "mist": "http://imagepathplaceholder",
+                    "fog": "http://imagepathplaceholder"};
+
+
+ function determineFC(pressed){
+   if(pressed==="celsius"){
+     calculatedTemp = toCelsius(currTemp);
+   }else{
+     calculatedTemp = toFahrenheit(currTemp);
+   }
+   //get selector and change data in box
+   $('#temp').text(Math.floor(calculatedTemp) + "°");
+ }
 
     //temperature switcher buttons // need C/F converter functiona
     //(K - 273.15) * 9/5 + 32
