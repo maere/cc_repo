@@ -22,6 +22,7 @@ var currConditions;
 var currWind;
 var convertTo = "fahrenheit"
 var pressed;
+var flikrImgURL;
 
 function getLocation(){
   if(navigator.geolocation){
@@ -38,7 +39,7 @@ function getLocation(){
 //eg. http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=8a8400a86a680c8a6a162acb0649285a
 //api call for lat long: api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}
 function getWeatherData(currLatitude, currLongitude){
-  var request_url = "http://api.openweathermap.org/data/2.5/weather?lat=" + currLatitude + "&lon=" + currLongitude + "&appid=" + apiKey;
+    var request_url = "http://api.openweathermap.org/data/2.5/weather?lat=" + currLatitude + "&lon=" + currLongitude + "&appid=" + apiKey;
 
   $.getJSON(request_url, function(json){
       currLocation = json.name;
@@ -53,44 +54,62 @@ function getWeatherData(currLatitude, currLongitude){
       calculatedTemp = toFahrenheit(currTemp);
 
       $('.location').text(currLocation);
-      //bg gets loaded depending on keyword in weather[0].main, will pull URL value from obj
+      // currConditions will become TAG - bg gets loaded depending on keyword in weather[0].main, will pull URL value from obj
       $('#temp').text(Math.floor(calculatedTemp) + "°"); //can also use Math.round() for integer
       $('#conditions').text(currDescription);
       $('#wind').text(currWind + " mph from " + Math.floor(currWindDirection) + "'");
+    });
 
-      //will have to write a pluck function to pull image if is match with currConditions, 
-      //or use the default if not
-      var flikrImage = bgPix.thunder;
-      var urlStringProperty = "url(" + flikrImage + ")";
+    //call get image function
+    getWeatherImage(currConditions);
 
-      $('body').css({
-          "background-image": urlStringProperty,
-          "border-left": "5px solid #ccc" ,
+  }
+
+  //need to set up function to make API call AFTER getting the weather conditions
+  function getWeatherImage(currConditions){
+
+    var tag = currConditions;
+    var api_key = "60e5dccddd5725a36f0ad6bb1a2bc40c";
+    var flikrCall = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="
+    + api_key + "&text=" + tag
+    + "&min_upload_date=&min_taken_date=2014-01-01&sort=relevance&content_type=1&media=photos&per_page=10&format=json&nojsoncallback=1";
+
+    //another getJSON object, set variables
+      $.getJSON(flikrCall, function(json){
+          var id = json.photos.photo[0].id;
+          var farm = json.photos.photo[0].farm;
+          var server = json.photos.photo[0].server;
+          var secret = json.photos.photo[0].secret;
+          flikrImgURL = 'https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '_b.jpg';
+          //var urlStringProperty = '"url("' + flikrImgURL + ')"';
+
+          //$('body').css('background-image', url(flikrImgURL));
+         $('body').css({
+           //"background-image": urlStringProperty,
+          "background-image": "url(http://farm8.staticflickr.com/7533/15515341323_e09b57a72a_b.jpg)",
+          "border-left": "5px solid #ccc",
           "background-position": "center center",
           "background-repeat": "no-repeat",
           "background-attachment": "fixed",
           "background-size": "cover",
           "background-color": "#464646"
          });
-
-    });
+      });
   }
-
 
   //depending on conditions loads background (stored in an object {})
       // and/or icon for general conditions (sunny, cloudy, partly cloudy, rain, drizzle, snow, sleet, etc.)
-
-      var bgPix = { "clouds": "http://i446.photobucket.com/albums/qq183/see_mare/cloudy_zpssxl3wozk.jpg",
-                    "partly cloudy": "http://i446.photobucket.com/albums/qq183/see_mare/partly-cloudy_zpswhfcgtmt.jpg",
-                    "clear": "http://placehold.it/1024x768",
-                    "sunny": "http://i446.photobucket.com/albums/qq183/see_mare/sunny_zpsjbfntxda.jpg",
-                    "rain": "http://farm8.staticflickr.com/7533/15515341323/e09b57a72a_b.jpg",
-                    "drizzle": "http://i446.photobucket.com/albums/qq183/see_mare/rain_zpsn3buiodd.jpg",
-                    "snow": "http://placehold.it/1024x768",
-                    "sleet": "http://placehold.it/1024x768",
-                    "mist": "http://placehold.it/1024x768",
-                    "fog": "http://placehold.it/1024x768", 
-                    "thunder": "http://i446.photobucket.com/albums/qq183/see_mare/lightening_zpslureet03.jpg"};
+      //
+      // var bgPix = { "clouds": "http://imagepathplaceholder",
+      //               "partly cloudy": "http://imagepathplaceholder",
+      //               "clear": "http://imagepathplaceholder",
+      //               "sunny": "http://imagepathplaceholder",
+      //               "rainy": "http://imagepathplaceholder",
+      //               "drizzle": "http://imagepathplaceholder",
+      //               "snow": "http://imagepathplaceholder",
+      //               "sleet": "http://imagepathplaceholder",
+      //               "mist": "http://imagepathplaceholder",
+      //               "fog": "http://imagepathplaceholder"};
 
 
  function determineFC(pressed){

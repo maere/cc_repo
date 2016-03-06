@@ -11,18 +11,22 @@ h1{
   font-size: 42;
   color: white;
   text-shadow: 3px 3px 5px black;
+  text-align: center;
 
   background-color: rgba(0,0,0,0.5);
   height: 100px;
   width: auto;
   border-radius: 5px;
+  border-style: ridge;
+  border-width: 1px;
   padding: 10px;
+  line-height: 100px;
 }
 
 h3{
   color:white;
   text-shadow: 3px 3px 5px black;
-  font-size: 18;
+  font-size: 24px;
 }
 
 p{
@@ -34,7 +38,7 @@ p{
   margin-top: 10px;
 
   background-color: rgba(0,0,0,0.5);
-  height: 30px;
+  height: auto;
   width: auto;
   border-radius: 5px;
   padding: 5px;
@@ -60,30 +64,26 @@ p{
   margin: 10px;
 }
 
-#temp-toggle{
-
-}
 
 body {
   /* Location of the image */
-  /* background-image: url(../assets/weatherapp/sunny.jpg); */
-  background-image: url(http://i446.photobucket.com/albums/qq183/see_mare/cloudy_zpssxl3wozk.jpg);
+ /*background-image: url(../assets/weatherapp/sunny.jpg)*/
 
   /* Background image is centered vertically and horizontally at all times */
-  background-position: center center;
+  /*background-position: center center;*/
 
   /* Background image doesn't tile */
-  background-repeat: no-repeat;
+  /*background-repeat: no-repeat;*/
 
   /* Background image is fixed in the viewport so that it doesn't move when
      the content's height is greater than the image's height */
-  background-attachment: fixed;
+    /*background-attachment: fixed;*/
 
   /* This is what makes the background image rescale based
      on the container's size */
-  background-size: cover;
+    /*background-size: cover;*/
 
   /* Set a background color that will be displayed
      while the background image is loading */
-  background-color: #464646;
+    /*background-color: #464646;*/
 }
