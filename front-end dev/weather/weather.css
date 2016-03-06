@@ -66,7 +66,8 @@ p{
 
 body {
   /* Location of the image */
-  background-image: url(../assets/weatherapp/sunny.jpg);
+  /* background-image: url(../assets/weatherapp/sunny.jpg); */
+  background-image: url(http://i446.photobucket.com/albums/qq183/see_mare/cloudy_zpssxl3wozk.jpg);
 
   /* Background image is centered vertically and horizontally at all times */
   background-position: center center;
