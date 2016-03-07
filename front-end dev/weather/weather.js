@@ -65,28 +65,31 @@ function getWeatherData(currLatitude, currLongitude){
 
   }
 
-  //need to set up function to make API call AFTER getting the weather conditions
+  //function to make API call AFTER getting the weather conditions
   function getWeatherImage(currConditions){
 
     var tag = currConditions;
     var api_key = "60e5dccddd5725a36f0ad6bb1a2bc40c";
     var flikrCall = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="
-    + api_key + "&text=" + tag
+    + api_key + "&tags=" + tag 
     + "&min_upload_date=&min_taken_date=2014-01-01&sort=relevance&content_type=1&media=photos&per_page=10&format=json&nojsoncallback=1";
+
+
 
     //another getJSON object, set variables
       $.getJSON(flikrCall, function(json){
-          var id = json.photos.photo[0].id;
-          var farm = json.photos.photo[0].farm;
-          var server = json.photos.photo[0].server;
-          var secret = json.photos.photo[0].secret;
+          var id = json.photos.photo[5].id;
+          var farm = json.photos.photo[5].farm;
+          var server = json.photos.photo[5].server;
+          var secret = json.photos.photo[5].secret;
           flikrImgURL = 'https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '_b.jpg';
-          //var urlStringProperty = '"url("' + flikrImgURL + ')"';
+          //var urlStringProperty = '"url(' + flikrImgURL + ')"';
+          var urlStringProperty = 'url(' + flikrImgURL + ')';
 
           //$('body').css('background-image', url(flikrImgURL));
          $('body').css({
-           //"background-image": urlStringProperty,
-          "background-image": "url(http://farm8.staticflickr.com/7533/15515341323_e09b57a72a_b.jpg)",
+          "background-image": urlStringProperty,
+          //"background-image": "url(http://farm8.staticflickr.com/7533/15515341323_e09b57a72a_b.jpg)",
           "border-left": "5px solid #ccc",
           "background-position": "center center",
           "background-repeat": "no-repeat",
