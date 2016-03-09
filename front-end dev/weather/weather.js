@@ -23,6 +23,13 @@ var currWind;
 var convertTo = "fahrenheit"
 var pressed;
 var flikrImgURL;
+var randomPhotoNum = getRandomInt(0, 10);
+
+
+//randomness function
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 function getLocation(){
   if(navigator.geolocation){
@@ -71,17 +78,17 @@ function getWeatherData(currLatitude, currLongitude){
     var tag = currConditions;
     var api_key = "60e5dccddd5725a36f0ad6bb1a2bc40c";
     var flikrCall = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key="
-    + api_key + "&tags=" + tag 
+    + api_key + "&tags=" + tag
     + "&min_upload_date=&min_taken_date=2014-01-01&sort=relevance&content_type=1&media=photos&per_page=10&format=json&nojsoncallback=1";
 
 
 
     //another getJSON object, set variables
       $.getJSON(flikrCall, function(json){
-          var id = json.photos.photo[5].id;
-          var farm = json.photos.photo[5].farm;
-          var server = json.photos.photo[5].server;
-          var secret = json.photos.photo[5].secret;
+          var id = json.photos.photo[randomPhotoNum].id;
+          var farm = json.photos.photo[randomPhotoNum].farm;
+          var server = json.photos.photo[randomPhotoNum].server;
+          var secret = json.photos.photo[randomPhotoNum].secret;
           flikrImgURL = 'https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '_b.jpg';
           //var urlStringProperty = '"url(' + flikrImgURL + ')"';
           var urlStringProperty = 'url(' + flikrImgURL + ')';

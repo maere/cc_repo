@@ -1,14 +1,14 @@
 
 h1{
   margin-bottom: 50px;
-  color: white;
+  color: rgb(255, 255, 255);
   text-shadow: 3px 3px 5px black;
 }
 
 .location{
   font-family: fantasy;
   font-style: italic;
-  font-size: 42;
+  font-size: 42px;
   color: white;
   text-shadow: 3px 3px 5px black;
   text-align: center;
