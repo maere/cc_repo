@@ -11,7 +11,7 @@ But after 18 months of scripting across a few languages I guess I have gotten a 
 - [Tribute Page](http://codepen.io/maere/pen/XXvJGg)
 
 #Intermediate Algorithm Scripting#
-- TBD
+- [Second Set of Algorithms](https://github.com/maere/cc_repo/tree/master/intermediate%20algos)
 
 #Intermediate Front End Development Projects#
 - [My Random Quote Machine Solution](http://codepen.io/maere/pen/dGKOEM) for [User Stories](http://www.freecodecamp.com/challenges/build-a-random-quote-machine)
