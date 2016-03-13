@@ -7,6 +7,8 @@ function convert(num){
   var remainder;
   var romanNum = [];
   var result = '';
+  var symbols = [["I", "V", "X"], ["X", "L", "C"], ["C", "D", "M"], ["M", "^", ">"]];
+
 
   while(num>0){
     tensPlace = num%divisor;
@@ -15,27 +17,13 @@ function convert(num){
     divisor = divisor*10;
   }
 
-
-result = checkPlace(places[3], 1000, ["M", "^", ">"]);
-romanNum.push(result);
-
-
-result = checkPlace(places[2], 100, ["C", "D", "M"]);
-romanNum.push(result);
-
-
-result = checkPlace(places[1], 10, ["X", "L", "C"]);
-romanNum.push(result);
-
-//result = checkOnes(places[0]);
-result = checkPlace(places[0], 1, ["I", "V", "X"]);
-romanNum.push(result);
-
-
-//console.log(romanNum.join(""));
-return romanNum.join("");
-
-}
+  for(var i=0; i<places.length; i++){
+    result = checkPlace(places[i], (Math.pow(10, i)), symbols[i]);
+    romanNum.unshift(result);
+  }
+    //console.log(romanNum.join(""));
+    return romanNum.join("");
+  }
 
 
 function checkPlace(number, multiplier, array){
