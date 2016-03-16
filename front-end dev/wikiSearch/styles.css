@@ -1,0 +1,27 @@
+h3 {
+  margin-left: 60px;
+}
+
+#question {
+  height: 100px;
+  width: auto;
+}
+
+#item {
+  background-color: aqua;
+  padding: 20px;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+#spacer {
+  margin: 10px;
+}
+
+#title {
+  font-size: 24px;
+}
+
+#list-data {
+
+}
