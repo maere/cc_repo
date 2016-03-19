@@ -4,6 +4,10 @@
   <title>WikiSearch</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- Optional theme -->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <!--<script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js" type=”'text/javascript'></script>-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.0/mustache.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,22 +34,22 @@
 <hr>
       <div class="layer" id="block-2">
         <h3>Results</h3>
-        <div class="container-fluid">
+        <div class="container-fluid" id="list">
       <!-- rows and sngle column -->
           <div class="row" id="item">
-
               <div class="col-md-9" id="list-data">
                 <a href="http://wikipedia.com"><div id="title">This is a Test</div></a>
-
                 <div id="info"><p>This is the info</p></div>
               </div>
+              <div class="col-md-1"></div>
               <div class="col-md-2">
-                <img class="img-responsive" id="question" src="http://i446.photobucket.com/albums/qq183/see_mare/question-mark-512_zpskrzmw7xq.gif">
+                <!--<img class="img-responsive" id="question" src="http://i446.photobucket.com/albums/qq183/see_mare/question-mark-512_zpskrzmw7xq.gif">-->
               </div>
             <div class="col-md-1"></div>
-            </div><!--why doesn't this end the row?-->
-
+            </div>
           <div class="row" id="spacer"></div>
+          <!--test output area <div id="output-test"></div> -->
+
 
           </div>
         </div><!--end list container-->
@@ -53,6 +57,28 @@
 
 
  </div><!--end main-->
- <!--<script src="js/scripts.js"></script> -->
+
+ <!--test template
+ <script type="text/html" id="template">
+    <p>{{title}} || {{description}} || {{link}}</p>
+ </script>-->
+
+ <script type="text/html" id="template">
+   <div class="row" id="item">
+       <div class="col-md-9" id="list-data">
+         <a href={{link}}><div id="title">{{title}}</div></a>
+         <div id="info"><p>{{description}}</p></div>
+       </div>
+      <div class="col-md-1"></div>
+       <div class="col-md-2">
+         <!--<img class="img-responsive" id="question" src={{image}}-->
+       </div>
+     </div>
+   <div class="row" id="spacer"></div>
+ </script>
+
+
+
+<script src="wiki.js"></script>
 </body>
 </html>
