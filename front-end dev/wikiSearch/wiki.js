@@ -1,70 +1,56 @@
-var searchString;
+//var searchString;
 var openSearchTest;
+var dataHolder = [];
+var titles;
+var descriptions;
+var links;
 
-$(document).ready(function () {
+$('#submitQuery').click(fetchString);
 
-  searchString = "Python";
-  openSearchTest = "https://en.wikipedia.org/w/api.php?" +
-  "action=opensearch&format=json&search=" + searchString + "&limit=10&suggest=1";
-  loadData();
+function fetchString(){
+  var searchString = $("#userQuery").val();
+  openSearchTest = "https://crossorigin.me/https://en.wikipedia.org/w/api.php?" +   //jsoncallback=?
+      "action=opensearch&format=json&search=" + searchString + "&limit=10&suggest=1";
+      alert("Using this value for the call: " + openSearchTest);
+      loadData(openSearchTest);
+}
 
-  });
+function loadData(openSearchTest){
 
-// these are the titles [1][i] (create as text in link)
-//these are the descriptions[2][i]
-//these are the links [3][i] (i is 0-9 for length of array)
-
-
-//on Submit, callback function to get string from input box and make the api call
-  //will return data as an array of arrays [3]
-
-
-
-  //test
-  function loadData(){
-
-    // Using jQuery
-    $.ajax( {
-        url: openSearchTest,
-        dataType: 'jsonp',
-        timeout : 2000,
-        type: 'GET',
-        headers: 'Access-Control-Allow-Origin: *',
-        success: function(data) {
-          //console.log(data);
-          titles = data[1];
-          descriptions = data[2];
-          links = data[3];
-
-          for(var i=0; i<titles.length; i++){
-
-            var data2 = {
-              title: titles[i],
-              description: descriptions[i],
-              link: links[i]
-            };
-
-            var output = $("#list");
-            var template = $("#template").html();
-            //var data2 = [title, description, link];
-            html = Mustache.render(template, data2);
-            output.append(html);
+    //alert("You got a search String: " + openSearchTest);
+    $.getJSON(openSearchTest, {
+      format: "json"
+    }, function(data){
+      //console.log(data);
+      titles = data[1];
+      descriptions = data[2];
+      links = data[3];
+      //console.log(titles, descriptions, links);
+      for(var i=0; i<titles.length; i++){
+          currObj = {
+            title: titles[i],
+            description: descriptions[i],
+            link: links[i]
           }
+          var output = $("#list");
+          var template = $("#template").html();
 
-        }
-    });
-
-
+          html = Mustache.render(template, currObj);
+          output.append(html);
+        }                     //.done(function(dataHolder){})
+    }).fail(function(){
+          alert("There was an error with you request.");
+      });
 
   }
 
 
 
-
-
-
-//function to iterate through array and get data for that i
-  //assign to current title, desc, link
-  //call helper function to assemble div elements
-
-//maybe do .forEach function,  assemble div elements, then append to the last one?
+// //maybe make titles, etc. global and move appending list into a separate function/callback
+  // function addDataToPage(){
+  //     var output = $("#list");
+  //       var template = $("#template").html();
+  //       //dataHolder = [title, description, link];
+  //       html = Mustache.render(template, dataHolder);
+  //       output.append(html);
+  // }

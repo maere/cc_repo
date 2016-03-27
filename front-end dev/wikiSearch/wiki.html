@@ -2,9 +2,9 @@
 <head>
   <meta charset="utf-8">
   <title>WikiSearch</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- Optional theme -->
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <!--<script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js" type=”'text/javascript'></script>-->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.0/mustache.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
@@ -23,11 +23,11 @@
         <div style="background:transparent !important" class="jumbotron">
           <h1>Wikipedia Search</h1>
             <p>Search for stuff and it will magically appear below...</p>
-            <form class="navbar-form navbar-left" role="search">
+            <form class="navbar-form navbar-left" role="search" id="search">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input id="userQuery" type="text" class="form-control" placeholder="Search" value=""/>
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button id="submitQuery" type="submit" class="btn btn-default">Submit</button>
             </form>
         </div>
       </div>
@@ -38,8 +38,8 @@
       <!-- rows and sngle column -->
           <div class="row" id="item">
               <div class="col-md-9" id="list-data">
-                <a href="http://wikipedia.com"><div id="title">This is a Test</div></a>
-                <div id="info"><p>This is the info</p></div>
+                <a href="http://wikipedia.com"><div id="title">Title Link</div></a>
+                <div id="info"><p>Short description here</p></div>
               </div>
               <div class="col-md-1"></div>
               <div class="col-md-2">
@@ -63,10 +63,12 @@
     <p>{{title}} || {{description}} || {{link}}</p>
  </script>-->
 
- <script type="text/html" id="template">
+ <script type="text/template" id="template">
    <div class="row" id="item">
        <div class="col-md-9" id="list-data">
-         <a href={{link}}><div id="title">{{title}}</div></a>
+         <a href="{{link}} ">  
+           <div id="title">{{title}}</div>
+         </a>
          <div id="info"><p>{{description}}</p></div>
        </div>
       <div class="col-md-1"></div>
@@ -76,7 +78,6 @@
      </div>
    <div class="row" id="spacer"></div>
  </script>
-
 
 
 <script src="wiki.js"></script>
