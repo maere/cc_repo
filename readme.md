@@ -7,8 +7,8 @@ This [first set of problems](https://github.com/maere/cc_repo/tree/master/basic%
 But after 18 months of scripting across a few languages I guess I have gotten a lot faster because I was able to knock out the first 10 of these basic problems in one night in the 3-5 hours between when I finished my dinner and when I went to bed. The remainder took a little more time, but I was still happy to know that I am getting much faster.
  
 #Basic Front End Development Projects#
-- Portolio Page
-- [Tribute Page](http://codepen.io/maere/pen/XXvJGg)
+- [Portolio Page]() for [User Stories](https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage)
+- [Tribute Page](http://codepen.io/maere/pen/XXvJGg) for [User Stories](https://www.freecodecamp.com/challenges/build-a-tribute-page)
 
 #Intermediate Algorithm Scripting#
 - [Second Set of Algorithms(in progress)](https://github.com/maere/cc_repo/tree/master/intermediate%20algos)
@@ -16,8 +16,8 @@ But after 18 months of scripting across a few languages I guess I have gotten a 
 #Intermediate Front End Development Projects#
 - [My Random Quote Machine Solution](http://codepen.io/maere/pen/dGKOEM) for [User Stories](http://www.freecodecamp.com/challenges/build-a-random-quote-machine)
 - [Show the Local Weather](http://codepen.io/maere/pen/KzpmvY) for [User Stories](http://www.freecodecamp.com/challenges/show-the-local-weather)
-- Build a Wikipedia Viewer
-- Use the Twitch.tv JSON API
+- [Build a Wikipedia Viewer](http://codepen.io/maere/pen/JXpdXp) for [User Stories](https://www.freecodecamp.com/challenges/build-a-wikipedia-viewer)
+- Use the Twitch.tv JSON API for [User Stories](https://www.freecodecamp.com/challenges/use-the-twitchtv-json-api)
 
 #Advanced Algorithm Scripting#
 - TBD
