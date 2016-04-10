@@ -7,7 +7,7 @@ This [first set of problems](https://github.com/maere/cc_repo/tree/master/basic%
 But after 18 months of scripting across a few languages I guess I have gotten a lot faster because I was able to knock out the first 10 of these basic problems in one night in the 3-5 hours between when I finished my dinner and when I went to bed. The remainder took a little more time, but I was still happy to know that I am getting much faster.
  
 #Basic Front End Development Projects#
-- [Portolio Page]() for [User Stories](https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage)
+- [Portfolio Page](http://codepen.io/maere/pen/zrgwGE) for [User Stories](https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage)
 - [Tribute Page](http://codepen.io/maere/pen/XXvJGg) for [User Stories](https://www.freecodecamp.com/challenges/build-a-tribute-page)
 
 #Intermediate Algorithm Scripting#
