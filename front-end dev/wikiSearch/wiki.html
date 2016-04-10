@@ -25,9 +25,12 @@
             <p>Search for stuff and it will magically appear below...</p>
 
               <div>
-              <input id="userQuery" class="input-sm" type="text" placeholder="Search"/>
-              <button id="submitQuery" class="btn btn-default">Submit</button>
+              <input id="userQuery" class="input-sm" type="text" placeholder="I want to search for..."/>
+              <button id="submitQuery" class="btn btn-primary">Submit</button><p id="inline"><strong> or </strong></p>
+              <a href="http://en.wikipedia.org/wiki/Special:Random"><button class="btn btn-success">Take Me to a Random Page!</button></a>
+
               </div>
+
 
         </div>
       </div>
@@ -36,11 +39,7 @@
         <h3>Results</h3>
         <div class="container-fluid" id="list">
       <!-- rows and sngle column -->
-          <div class="row" id="item">
-              <div class="col-md-9" id="list-data">
-                <a href="#"><div id="title">Link to Topic</div></a>
-                <div id="info"><p>A short description will appear here.</p></div>
-              </div>
+
               <div class="col-md-1"></div>
               <div class="col-md-2">
                 <!--<img class="img-responsive" id="question" src="http://i446.photobucket.com/albums/qq183/see_mare/question-mark-512_zpskrzmw7xq.gif">-->
@@ -66,7 +65,7 @@
  <script type="text/template" id="template">
    <div class="row" id="item">
        <div class="col-md-9" id="list-data">
-         <a href="{{link}}">
+         <a href="{{link}}" target="_blank">
            <div id="title">{{title}}</div>
          </a>
          <div id="info"><p>{{description}}</p></div>

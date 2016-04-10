@@ -11,6 +11,12 @@ $(document).on('click', '#submitQuery', function () {
 
   });
 
+  //covers any key
+  $(".row#item").click(function(){
+    window.location = $(this).find("a").attr("href");
+});
+
+
   //test
   function loadData(){
 
@@ -50,3 +56,10 @@ $(document).on('click', '#submitQuery', function () {
     $('#list').empty();
     $('#userQuery').val("");
   }
+
+$('#list-data').click(function(){
+    link = this.getElementsByTagName('a').getAttribute();
+    numInMem = displayNum;//these will change to push to array
+    displayNum = 0; //resets
+    operatorHighlight();
+  });

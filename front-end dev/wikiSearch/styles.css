@@ -30,9 +30,12 @@ h3 {
 }
 
 button {
-  padding: 5px;
+  padding: 10px;
 }
 
+#inline{
+  display: inline;
+}
 /* unvisited link */
 a:link {
     color: rgb(232,232,232);
