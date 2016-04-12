@@ -1,0 +1,88 @@
+header {
+  margin-left: 20px;
+}
+
+.container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 960px;
+
+}
+
+#heads {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  font-family: sans-serif;;
+  background-color: black;
+  height: auto;
+  width: auto;
+  padding: 5px;
+  color: white;
+  border-width: thin;
+  border-color: black;
+}
+
+
+#title {
+
+	font-size: 24px;
+  font-family: monospace;;
+	font-weight: bold;
+  height: 40px;
+  padding: 15px;
+  background-color: rgb(165, 165, 165);
+}
+
+#channel-info {
+  font-size: 18;
+  font-style: normal;
+  font-weight: 300;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  background-color: rgb(165, 165, 165);
+
+}
+
+#status-circle {
+ height: 30px;
+ width: 30px;
+ border-radius: 50%;
+ background: rgb(0, 230, 0);
+ border: 3px solid rgb(60,60,60);
+ position: relative;
+ margin-left: 10px;
+}
+
+#stream-data {
+
+}
+
+#channel-logo {
+  height: 100px;
+  width: 100px;
+}
+
+#third-line {
+
+}
+
+#views, #followers{
+  font-size: 18px;
+}
+#followers {
+  padding-left: 40px;
+}
+
+
+#spacer {
+  height: 5px;
+  width: auto;
+  background-color: rgb(91, 59, 150);
+
+}
+
+#output {
+  margin: 75px;
+}

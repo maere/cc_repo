@@ -6,9 +6,10 @@
   <meta name="description" content="Title here">
   <meta name="author" content="tbd">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!--<link rel="stylesheet" href="css/styles.css?v=1.0">-->
-
+  <link rel="stylesheet" href="twitch.css">
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -16,8 +17,46 @@
 
 <body>
   <!--<script src="js/scripts.js"></script> -->
-  <h1>Page Start</h2>
-  <p id="output"></p>
+    <header>
+      <h1>TwitchTV Guide</h1>
+    </header>
+    <hr>
+    <div class="container-fluid">
+      <div class="row" id="heads">
+        <div class="col-md-2">Live?</div>
+        <div class="col-md-8">Current Stream</div>
+        <div class="col-md-2">Channel</div>
+      </div>
+
+        <div class="row" id="title">Channel Title Placeholder</div>
+
+        <div class="row" id="channel-info">
+            <div class="col-md-2"><div id="status-circle"></div></div>
+            <div class="col-md-8" id="stream-data">
+              <p>Stream Name and Link Placholder</p>
+              <p id="views">Views: 14 <span id="followers">Followers: 1347</span></p>
+
+            </div>
+            <div class="col-md-2" id="channel-logo"><img class="img-responsive"
+            src="https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png"/></div>
+        </div>
+        <!--removed
+        <div class="row" id="third-line">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>-->
+              <div class="row" id="spacer"></div>
+
+
+        <!--for testing-->
+        <div><p id="output"></p></div>
+
+
+      </div><!--end container-->
+
 
 <script src="twitch.js"></script>
 </body>

@@ -1,14 +1,12 @@
 var users = ["freecodecamp", "storbeck", "terakilobyte",
 "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff"];
 
-//test data
-
-
 $(document).ready(function(){
 
   //call w test data
-  getStreamStatus('cretetion');
+  //getStreamStatus('cretetion');
   //getChannelData(brunofin); //if returns undefined, then put in placeholder
+  getChannelData(users[0]);
 
 });
 
@@ -23,13 +21,11 @@ function getStreamStatus(channelName){
       dataType: 'jsonp',
       Accept: 'application/vnd.twitchtv.v3+json'
   }).then(function(data) {
-    //console.log(data);
-      // handle requested data from server
+
       if(data['stream']==null){
         alert("Not streaming: " + data['stream']);
       }
       else{
-
           var viewers = data['stream']['viewers'];
           var game = data['stream']['game'];
           var liveURL = data['stream']['channel']['url'];
@@ -60,7 +56,7 @@ function getChannelData(channelName){
   }).then(function(response) {
     console.log(response);
       // handle requested data from server
-      //var logo = response['stream']['channel']['logo']; //channel is undefined here....
+      var logo = response['logo']; 
       var displayName = response['display_name'];
       var status = response['status'];
       var url = response['url'];
