@@ -1,9 +1,13 @@
-var users = ["freecodecamp", "storbeck", "terakilobyte",
-"habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff"];
+var allChannelData = [];
+var placeholder_logo = "http://placehold.it/100x100";
+var placeholder_status = "Offline";
+
+var users = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff"];
+
 $(document).ready(function(){
   //creates and array to store the JSON object from the API call
-  getChannels(users, callback); //should have a callback, so that when the data has arrived it can process
-
+  getChannels(users); //should have a callback, so that when the data has arrived it can process
+  //displayChannelData(allChannelData);
   //getStreamStatus('cretetion');
   //getChannelData(brunofin); //if returns undefined, then put in placeholder
   //getChannelData(users[0]);
@@ -45,27 +49,43 @@ function getChannelData(channelName){
       //     id: 123
       // }
   }).then(function(response) {
-    console.log(response);
+    //console.log(response); //it gets this far.....
       // handle requested data from server
-      var logo = response['logo'];
-      var displayName = response['display_name'];
-      var status = response['status'];
-      var url = response['url'];
-// console.log(displayName);  // console.log(status);  // console.log(url); // console.log(logo);
-      //fills in basic channel data whether or not streaming
-        $('#title').text(displayName);
-        $('#stream-data a').attr('href', url);
-        $('#stream-data a').text(url);
-        $('#channel-logo img').attr('src', logo);
+      var currentChannel = {
+        logo: response['logo'],
+        displayName: response['display_name'],
+        status: response['status'],
+        url: response['url']
+      }
+      cleanData(currentChannel);
+      //allChannelData.push(currentChannel);
+      displayChannelData(currentChannel);
+
   });
 }
 
+//helper function makes the API call for each channel and stores all returned objects in an array
+function getChannels(channelArray){
+  for(var i=0; i<channelArray.length; i++){
+    getChannelData(channelArray[i]);
+  }
+}
 
-//makes the API call for each channel and stores all returned objects in an array
-//has a callback that executes the next part once data is returned
-function getChannels(channelArray, callback){
-  
+//helper function to get rid of null values before pulling data into template
+function cleanData(object){
+    //if status is null or logo is null then replace null values with placeholder data
+    if(object['logo']===null){
+      object['logo'] = placeholder_logo;
+    }
+    if(object['status']===null){
+      object['status'] = placeholder_status;
+    }
+}
 
-
-  callback();
+function displayChannelData(object){
+    var output = $("#list");
+    var template = $("#template").html();
+                //var data2 = [title, description, link];
+    html = Mustache.render(template, object);
+    output.append(html);
 }

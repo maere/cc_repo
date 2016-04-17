@@ -49,7 +49,8 @@ header {
  height: 30px;
  width: 30px;
  border-radius: 50%;
- background: rgb(0, 230, 0);
+ /*background: rgb(0, 230, 0);*/
+ background-color: rgb(165,165,165);
  border: 3px solid rgb(60,60,60);
  position: relative;
  margin-left: 10px;
@@ -64,11 +65,15 @@ header {
   width: 100px;
 }
 
+.img-responsive {
+    border-radius: 5%;
+}
+
 #third-line {
 
 }
 
-#views, #followers{
+#views, #followers, #channel-link{
   font-size: 18px;
 }
 #followers {
@@ -78,7 +83,7 @@ header {
 
 #spacer {
   height: 5px;
-  width: auto;
+  
   background-color: rgb(91, 59, 150);
 
 }

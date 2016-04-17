@@ -11,7 +11,7 @@ $(document).on('click', '#submitQuery', function () {
 
   });
 
-  //covers any key
+  //covers any div
   $(".row#item").click(function(){
     window.location = $(this).find("a").attr("href");
 });
@@ -59,7 +59,5 @@ $(document).on('click', '#submitQuery', function () {
 
 $('#list-data').click(function(){
     link = this.getElementsByTagName('a').getAttribute();
-    numInMem = displayNum;//these will change to push to array
-    displayNum = 0; //resets
-    operatorHighlight();
+  
   });

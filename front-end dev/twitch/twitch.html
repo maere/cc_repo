@@ -6,6 +6,7 @@
   <meta name="description" content="Title here">
   <meta name="author" content="tbd">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.0/mustache.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!--<link rel="stylesheet" href="css/styles.css?v=1.0">-->
@@ -27,36 +28,42 @@
         <div class="col-md-8">Get Stream</div>
         <div class="col-md-2">Channel</div>
       </div>
-
-        <div class="row" id="title">Channel</div>
-
-        <div class="row" id="channel-info">
+      <div id="list">
+      <div class="row" id="title">Channel</div>
+      <div class="row" id="channel-info">
             <div class="col-md-2"><div id="status-circle"></div></div>
             <div class="col-md-8" id="stream-data">
               <p>Offline</p>
               <p id="views"><a href="#"></a><span id="followers"></span></p>
+      </div>
+      <div class="col-md-2" id="channel-logo"><img class="img-responsive"
+            src="http://placehold.it/100x100"/></div>
+      </div>
+      <div class="row" id="spacer"></div>
+    </div>
+        <!--for testing
+        <div><p id="output"></p></div>-->
 
+  </div><!--end container-->
+<!--test template-->
+      <script type="text/html" id="template">
+        <div class="row" id="title">{{displayName}}</div>
+        <div class="row" id="channel-info">
+            <div class="col-md-2"><div id="status-circle"></div></div>
+            <div class="col-md-8" id="stream-data">
+              <p>Offline</p>
+              <p id="views"><a href="{{url}}">{{url}}</a><span id="followers"></span></p>
             </div>
             <div class="col-md-2" id="channel-logo"><img class="img-responsive"
-            src="http://placehold.it/100x100"/></div>
+            src="{{logo}}"/></div>
         </div>
-        <!--removed
-        <div class="row" id="third-line">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-
-            </div>
-            <div class="col-md-2"></div>
-        </div>-->
-              <div class="row" id="spacer"></div>
-
-
-        <!--for testing-->
-        <div><p id="output"></p></div>
-
-
-      </div><!--end container-->
-
+        <div class="row" id="spacer"></div>
+<!-- test template
+         <p>{{status}} || {{logo}}</p>
+         <a href="{{url}}" target="_blank">
+           <div id="title">{{displayName}}</div>
+         </a>-->
+    </script>
 
 <script src="twitch.js"></script>
 </body>
