@@ -69,9 +69,6 @@ header {
     border-radius: 5%;
 }
 
-#third-line {
-
-}
 
 #views, #followers, #channel-link{
   font-size: 18px;
@@ -83,9 +80,8 @@ header {
 
 #spacer {
   height: 5px;
-  
+  width: auto;
   background-color: rgb(91, 59, 150);
-
 }
 
 #output {

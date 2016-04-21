@@ -29,17 +29,17 @@
         <div class="col-md-2">Channel</div>
       </div>
       <div id="list">
-      <div class="row" id="title">Channel</div>
-      <div class="row" id="channel-info">
+      <!--<div class="row" id="title">Channel</div>
+          <div class="row" id="channel-info">
             <div class="col-md-2"><div id="status-circle"></div></div>
             <div class="col-md-8" id="stream-data">
               <p>Offline</p>
               <p id="views"><a href="#"></a><span id="followers"></span></p>
-      </div>
+          </div>
       <div class="col-md-2" id="channel-logo"><img class="img-responsive"
             src="http://placehold.it/100x100"/></div>
       </div>
-      <div class="row" id="spacer"></div>
+      <div class="row" id="spacer"></div>-->
     </div>
         <!--for testing
         <div><p id="output"></p></div>-->
@@ -47,6 +47,7 @@
   </div><!--end container-->
 <!--test template-->
       <script type="text/html" id="template">
+      <div class="list-item">
         <div class="row" id="title">{{displayName}}</div>
         <div class="row" id="channel-info">
             <div class="col-md-2"><div id="status-circle"></div></div>
@@ -58,6 +59,7 @@
             src="{{logo}}"/></div>
         </div>
         <div class="row" id="spacer"></div>
+      </div>  
 <!-- test template
          <p>{{status}} || {{logo}}</p>
          <a href="{{url}}" target="_blank">
