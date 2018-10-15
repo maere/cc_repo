@@ -1,3 +1,4 @@
+https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/sum-all-odd-fibonacci-numbers/
 function sumFibs(num) {
 
   var fibArray = [];

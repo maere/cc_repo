@@ -1,21 +1,14 @@
-//iterate through and remove each element starting from the first element
-//(the 0 index) until the function func returns true
-//when the iterated element is passed through it.
-
-//hen return the rest of the array once the condition is satisfied,
-//otherwise, arr should be returned as an empty array.
-
+https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/drop-it/
 
 function dropElements(arr, func) {
 
-while(arr.length>=0){
-  let condition = func(arr[0]);
-  if(condition===false){
-    arr.shift();
+  while(arr.length>=0){
+    if(func(arr[0])===false){
+      arr.shift();
+    }
+    else {
+      return arr;
+    }
   }
-  else {
-    return arr;
-  }
-}
   return arr;
 }
